@@ -75,7 +75,7 @@ class Test_003_Login:
 
         self.logger.info("**********The new customer has been added successfully*************  ")
         self.driver.close()
-
+        #commit changes
 
 
 
