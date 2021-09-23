@@ -5,17 +5,15 @@ from utitlities.readProperties import readConfig
 from utitlities.customLogger import LogGen
 
 
-
 class Test_001_Login:
     baseURL = readConfig.getApllicationURL()
     username = readConfig.getUseremail()
     password = readConfig.getPassword()
 
-    logger=LogGen.loggingDmo()
-
+    logger = LogGen.loggingDmo()
 
     @pytest.mark.regression
-    def test_homepageTitel(self,setup):
+    def test_homepageTitel(self, setup):
 
         self.logger.info("****************Test_001_Login*************  ")
         self.logger.info("**************** Verifiing home page title *************  ")
@@ -35,7 +33,7 @@ class Test_001_Login:
 
     @pytest.mark.sanity
     @pytest.mark.regression
-    def test_login(self,setup):
+    def test_login(self, setup):
         self.logger.info("**************** Verifiing login test *************  ")
         self.driver = setup
         self.driver.get(self.baseURL)
@@ -43,6 +41,7 @@ class Test_001_Login:
         self.lp.setUserName(self.username)
         self.lp.setPassword(self.password)
         self.lp.clickLogin()
+        
         act_title = self.driver.title
 
         if act_title == "Dashboard / nopCommerce administration":

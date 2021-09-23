@@ -5,7 +5,7 @@ import pytest
 @pytest.fixture(scope="function")
 def setup(browser):
     if browser == 'Chrome':
-        driver = webdriver.Chrome(executable_path="C:/Users/Hp/Desktop/New nani/chromedriver.exe")
+        driver = webdriver.Chrome(executable_path="C:/Users/Nani Madhan/Downloads/chromedriver_win32/chromedriver.exe")
         print("launching Chrome")
     elif browser == 'Firefox':
         driver = webdriver.Firefox(executable_path="C:/Users/Hp/Desktop/New nani/geckodriver.exe")
@@ -25,9 +25,12 @@ def browser(request):
     return request.config.getoption("--browser")
 
 
+'''
 def pytest_configure(config):
     config._metadata['project name'] = 'nop commerce'
     config._metadata['module name'] = 'customers'
     config._metadata['Tester'] = 'madhan'
+    
+'''
 
 

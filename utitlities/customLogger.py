@@ -6,8 +6,6 @@ class LogGen:
 
     @staticmethod
     def loggingDmo():
-
-
         loggername = inspect.stack()[1][3]
         # getLogger() method takes the test case name as input
         logger = logging.getLogger(loggername)
